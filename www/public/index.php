@@ -4,13 +4,19 @@ require "../routes/router.php";
 
 $api=explode("/",$_SERVER["REQUEST_URI"]);
 
+function tratarUri($uri){
+    $ura = explode('/',$uri);
+    unset($ura[1]);
+    return "/".implode($ura);
+}
+
+
+
 if($api[1] == "api"){
     try{
-        
-        $uri=parse_url($_SERVER["REQUEST_URI"])['path']; // uri da url
-        $ura = explode('/',$uri);
-        unset($ura[1]);
-        $uri = "/".implode($ura);
+
+        $uri= tratarUri(parse_url($_SERVER["REQUEST_URI"])['path']); // uri da url
+       
 
         $request=$_SERVER["REQUEST_METHOD"]; // metodo da requisição
        
