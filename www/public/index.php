@@ -5,18 +5,25 @@ require "../routes/router.php";
 
 try{
 
-    $uri=parse_url($_SERVER["REQUEST_URI"])['path'];
+    $uri=parse_url($_SERVER["REQUEST_URI"])['path']; // uri da url
 
-    $request=$_SERVER["REQUEST_METHOD"];
+    $request=$_SERVER["REQUEST_METHOD"]; // metodo da requisição
    
-    if(! isset($router[$request])){
-        echo "A rota não existe";
+    if(! isset($router[$request])){ // Verifica se não existe o metodo no array router dentro de router.php
+        echo "O metodo da requisição não existe!!";
+
+        var_dump($router[$request]);
+       
     }
-    if(! array_key_exists($uri,$router[$request])){
-        echo "A rota não existe";
+    if(! array_key_exists($uri,$router[$request])){// verifica se não existe a rota/requisição
+
+        echo "Erro em enviar/solicitar a requisição!!";
+        var_dump($uri,$router[$request]);
     }
 
-   $controller = $router[$request][$uri];
+    // se passar das verificações, 
+
+   $controller = $router[$request][$uri]; // recebe os dados
    $controller(); 
   
 }catch(Exception $e){

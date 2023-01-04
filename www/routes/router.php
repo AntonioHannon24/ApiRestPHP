@@ -6,15 +6,15 @@ function load(string $controller, string $action){
         $controllerNamespace="app\\controllers\\{$controller}";
         //var_dump($controller);
 
-        if(!class_exists($controllerNamespace)){
-           echo "O controller {$Controller} não existe";
+        if(!class_exists($controllerNamespace)){//Verifica se existe o controller da solicitação
+           echo "O controller {$controller} não existe";
         }
         $controllerInstance = new $controllerNamespace();
         
-        if(!method_exists($controllerInstance,$action)){
+        if(!method_exists($controllerInstance,$action)){// verifica se existe o metodo no Controller!!
             echo "O metodo {$action} não existe no controller {$controller}";
         }
-        $controllerInstance->$action((object)$_REQUEST);   
+        $controllerInstance->$action((object)$_REQUEST);// executa a solicitação!!
     }catch(Exception $e){
         
         "O método {$action} não existe no controller {$controller}";
@@ -22,12 +22,15 @@ function load(string $controller, string $action){
     }
 }
 $router=[
+
     "GET"=>[
-        "/"  => fn()=> load("HomeController","index"),
-        "/contact" =>fn()=> load("ContactController","index"),
+        "/usuarios"  => fn()=> load("UsuariosController","index"),
     ],
     "POST"=>[
-        "/contact" =>fn()=> load("ContactController","store"),
+        "/usuarios"  => fn()=> load("UsuariosController","post"),
+    ],
+    "PATCH"=>[
+        "/usuarios"=>fn()=>load("UsuariosController","patch"),
     ]
 ];
 ?>
