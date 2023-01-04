@@ -1,0 +1,15 @@
+{
+    "name": "antonio/www",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "Antonio",
+            "email": "antoniohannon24@gmail.com"
+        }
+    ],
+    "require": {}
+}
