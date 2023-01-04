@@ -4,7 +4,7 @@ namespace app\controllers;
 class HomeController{
 
     public function index(){
-       echo "Chupa fdp!!";
+      echo "Index home!";
     }
 
 }
