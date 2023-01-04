@@ -22,15 +22,18 @@ function load(string $controller, string $action){
     }
 }
 $router=[
-
     "GET"=>[
         "/usuarios"  => fn()=> load("UsuariosController","index"),
+      
     ],
     "POST"=>[
         "/usuarios"  => fn()=> load("UsuariosController","post"),
     ],
     "PATCH"=>[
-        "/usuarios"=>fn()=>load("UsuariosController","patch"),
-    ]
+        "/usuarios"=>fn()=>load("UsuariosController","update"),
+    ],
+    "DELETE"=>[
+        "/usuarios"=>fn()=>load("UsuariosController","destroy"),
+    ],
 ];
 ?>

@@ -12,9 +12,9 @@ function tratarUri($uri){
 
 
 
-if($api[1] == "api"){
+if($api[1] == "api"){// verifica se tem o prefixo Api na url
+    
     try{
-
         $uri= tratarUri(parse_url($_SERVER["REQUEST_URI"])['path']); // uri da url
        
 
