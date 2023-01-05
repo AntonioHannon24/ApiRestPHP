@@ -10,7 +10,7 @@
         const HOST = '127.0.0.1';
         const NAME = 'biblioteca';
         const USER = 'root';
-        const PASS = '123456';
+        const PASS = 'root';
 
         private $table;
         private $connection;
@@ -24,7 +24,7 @@
 
         private function setConnection(){
             try{// tenta conectar ao banco de dados, caso consiga ele cai aqui
-                $this->connection = new PDO('mysql:host='.self::HOST.';port=44002;dbname='.self::NAME,self::USER,self::PASS); 
+                $this->connection = new PDO('mysql:host='.self::HOST.';port=63002;dbname='.self::NAME,self::USER,self::PASS); 
                 $this->connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION); // caso de errado, ele para o programa
     
             }catch(PDOException $e){ // caso n consiga, exibe mensagem de erro
