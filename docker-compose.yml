@@ -12,7 +12,7 @@ services:
             - MYSQL_ROOT_PASSWORD=123456
             - MYSQL_DATABASE=biblioteca
             - MYSQL_USER=antonio
-            - MYSQL_PASSWORD=88477430
+            - MYSQL_PASSWORD=123456
         ports:
             - '44002:3306'
 
