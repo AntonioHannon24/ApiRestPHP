@@ -1,10 +1,17 @@
 <?php
 namespace app\controllers;
+use app\database\Database;
+use \PDO;
 
 class UsuariosController{
 
     public function index(){
-      echo "Index usuários!";
+      
+      $fields = ['*'];
+      
+      $teste =(new Database('usuarios'))->select($fields)->fetchAll(PDO::FETCH_CLASS,self::class);
+      echo $teste;
+
     }
     public function show(){
       echo "Show usuários!";
