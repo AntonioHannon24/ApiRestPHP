@@ -10,8 +10,9 @@ class UsuariosController{
       $fields = ['*'];
       
       $teste =(new Database('usuarios'))->select($fields)->fetchAll(PDO::FETCH_CLASS,self::class);
-      echo $teste;
-
+      echo "<pre>";
+      var_dump($teste);
+      echo "</pre>";
     }
     public function show(){
       echo "Show usuários!";

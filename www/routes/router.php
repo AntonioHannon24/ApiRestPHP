@@ -23,7 +23,7 @@ function load(string $controller, string $action){
 }
 $router=[
     "GET"=>[
-        "/usuarios"  => fn()=> load("UsuariosController","index"),
+        "/api/usuarios"  => fn()=> load("UsuariosController","index"),
       
     ],
     "POST"=>[
